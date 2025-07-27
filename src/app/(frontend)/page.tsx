@@ -13,6 +13,8 @@ export default async function HomePage() {
   const payload = await getPayload({ config: payloadConfig })
   const { user } = await payload.auth({ headers })
 
+  // console.log(permissions)
+
   const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
 
   return (
@@ -54,6 +56,7 @@ export default async function HomePage() {
           <code>app/(frontend)/page.tsx</code>
         </a>
       </div>
+      {/*  */}
     </div>
   )
 }
