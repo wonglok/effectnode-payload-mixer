@@ -27,8 +27,8 @@ export const checkAccess = async ({
     level: 'superadmin' | 'admin' | 'teacher' | 'student'
 }) => {
     //
-    let userRole = roles.find((r) => r.role === level) as { power: number }
-    let requireRole = roles.find((r) => r.role === user?.role)
+    const userRole = roles.find((r) => r.role === level) as { power: number }
+    const requireRole = roles.find((r) => r.role === user?.role)
 
     if (requireRole && userRole) {
         if (requireRole?.power >= userRole?.power) {
@@ -40,3 +40,5 @@ export const checkAccess = async ({
         return false
     }
 }
+
+//
