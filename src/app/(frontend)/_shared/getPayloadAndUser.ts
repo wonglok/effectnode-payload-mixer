@@ -8,6 +8,7 @@ export async function getNextPayloadUser() {
     const payload = await getPayload({ config: payloadConfig })
     const { user } = await payload.auth({ headers })
 
+    //
     return {
         user,
         payload,
